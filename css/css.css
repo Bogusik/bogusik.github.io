@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+    color: #ebebeb;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition-duration: 0.5s;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 10%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(115deg, #252934 5%, #252934 30%, #252934 45%, #70358B 120%);
+    background: -moz-linear-gradient(-35deg, #252934 5%, #252934 30%, #252934 45%, #70358B 120%);
+}
+
+ul {
+    list-style: none;
+    text-align: right;
+}
+
+ul li {
+    color: #76848D;
+    line-height: 3em;
+    width: 200px;
+}
+
+ul li.active {
+    font-size: 1.5em;
+    color: #ebebeb;
+}
+
+ul li:hover {
+    color: #ebebeb;
+    cursor: pointer;
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    position: absolute;
+    z-index: 100;
+    right: 10%;
+}
+
+#sections {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    display: block;
+    margin-top: 0;
+    height: 100%;
+    width: 80%;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.6em;
+    line-height: 1.8em;
+    display: block;
+}
+
+.purple {
+    color: #AD3AE3;
+}
+
+.second-font {
+    font-family: 'Fjord One', serif;
+    font-weight: normal;
+}
+
+button {
+    display: block;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #AD3AE3;
+    height: 3em;
+    padding: 0 2em;
+    color: #AD3AE3;
+    width: 200px;
+    font-weight: 700;
+}
+
+button:hover {
+   background-color: #AD3AE3;
+   color: #252934;
+   cursor: pointer;
+}
+
+#about-me-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#about-me-section button {
+    margin-top: 2em;
+}
+
+#about-me-section h3 {
+    max-width: 600px;
+}
+
+.menu-button {
+    width: 24px;
+    float: right;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+#sections section {
+    position: absolute;
+    top: 0;
+}
+
+section:not(:first-child) {
+    opacity: 0;
+    margin-left: -2em;
+    pointer-events: none;
+}
+
+#contact-me-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#contact-me-section a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #70358B23;
+    margin: 2em;
+    border-radius: 10px;
+    background: transparent;
+    box-shadow:  10px 10px 35px rgba(0, 0, 0, 0.35),
+                -10px -10px 35px rgba(255, 255, 255, 0.05);
+}
+
+#contact-me-section a > * {
+    margin: 1em;
+}
+
+#contact-me-section a p {
+    line-height: 2em;
+    height: 2em;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #76848D;
+}
+
+#contact-me-section a svg {
+    height: 2em;
+    width: 2em;
+    fill: #76848D;
+}
+
+#contact-me-section a:hover p {
+    color: #ebebeb;
+}
+
+#contact-me-section a:hover svg {
+    fill: #ebebeb;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#menu-list.activated {
+    margin-right: 1em;
+}
+
+@media screen and (max-width: 600px) {
+    button {
+        width: 100%;
+    }
+
+    #about-me-section h1 {
+        margin: 0;
+    }
+
+    #about-me-section {
+        justify-content: space-evenly;
+    }
+    #menu-list {
+        margin-right: calc(-10% - 200px);
+    }
+    .menu-button {
+        pointer-events: auto;
+    }
+    menu {
+        top: 1em;
+        right: 1em;
+    }
+    ul li {
+        font-size: 1.5em;
+    }
+    ul li.active {
+        font-size: 2em;
+    }
+    #contact-me-section a {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
