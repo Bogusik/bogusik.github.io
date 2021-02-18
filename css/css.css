@@ -203,7 +203,7 @@ section:not(:first-child) {
     margin-right: 1em;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     button {
         width: 100%;
     }
@@ -214,6 +214,11 @@ section:not(:first-child) {
 
     #about-me-section {
         justify-content: space-evenly;
+    }
+    #menu-button {
+        position: fixed;
+        top: 1em;
+        right: 1em;
     }
     #menu-list {
         margin-right: calc(-10% - 200px);
