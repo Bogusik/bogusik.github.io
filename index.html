@@ -1,95 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bohuslav Semenov | Full stack engineer.</title>
-    <link rel="stylesheet" href="css/css.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fjord+One&display=swap" rel="stylesheet"> 
-</head>
-<script>
-    var currentId = 'about-me';
-
-    function makeActive(id) {
-        item = document.getElementById(id+'-link');
-        if (item.className !== 'active') {
-            document.getElementsByClassName('active')[0].className = '';
-            item.className = 'active';
-        }
-    }
-
-    function toggle(id) {
-        makeActive(id);
-        if (document.getElementById('menu-list').className === "activated")
-            toggleMenu();
-        let newSection = document.getElementById(id+'-section');
-        let oldSection = document.getElementById(currentId+'-section');
-        if(id != currentId) {
-            animate(newSection, oldSection)
-            currentId = id;
-        }
-    }
-
-    function animate(newSection, oldSection) {
-        oldSection.style.marginLeft = "-2em";
-        oldSection.style.opacity = 0;
-        oldSection.style.pointerEvents= "none";
-        setTimeout(() => {
-            newSection.style.marginLeft = "0em";
-            newSection.style.opacity = 1;
-            newSection.style.pointerEvents= "auto";
-        }, 500)
-    }
-    function toggleMenu() {
-       let menu = document.getElementById('menu-list');
-       let sections = document.getElementById('sections');
-       if(menu.className === "activated") {
-            menu.className = "";
-            sections.style.marginLeft = "0";
-       } else {
-            menu.className = "activated";
-            sections.style.marginLeft = "-100vw";
-       }
-    }
-</script>
-<body>
-    <div class="bg"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bohuslav Semenov - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&family=Petrona:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="grain"></div>
+      <div class="blob">
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 250 250"
+          width="100%"
+          id="blobSvg"
+          filter="blur(70px)"
+          style="opacity: 0.5"
+          transform="rotate(20)"
+        >
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: rgb(196, 0, 120)"></stop>
+              <stop offset="100%" style="stop-color: rgb(196, 0, 120)"></stop>
+            </linearGradient>
+          </defs>
+          <path id="blob" fill="url(#gradient)" style="opacity: 0.5">
+            <animate
+              attributeName="d"
+              dur="10000ms"
+              repeatCount="indefinite"
+              values="M409.06419,322.5266Q395.0532,395.0532,322.5266,445.11739Q250,495.18159,163.51944,459.07135Q77.03888,422.96112,82.39949,336.48056Q87.7601,250,115.64271,196.76266Q143.52532,143.52532,196.76266,76.83657Q250,10.14783,323.24578,56.82813Q396.49156,103.50844,409.78338,176.75422Q423.07519,250,409.06419,322.5266Z;M418.08664,320.33435Q390.6687,390.6687,320.33435,427.91946Q250,465.17023,188.27506,419.31005Q126.55013,373.44987,106.38448,311.72494Q86.21883,250,84.09726,165.98785Q81.9757,81.9757,165.98785,53.98938Q250,26.00305,311.1687,76.83282Q372.3374,127.6626,408.92099,188.8313Q445.50458,250,418.08664,320.33435Z;M423.42552,332.41134Q414.82268,414.82268,332.41134,424.30554Q250,433.78841,170.96572,420.92848Q91.93144,408.06856,46.07152,329.03428Q0.21159,250,66.88003,191.77423Q133.54846,133.54846,191.77423,102.82861Q250,72.10876,305.00592,106.04846Q360.01185,139.98815,396.0201,194.99408Q432.02836,250,423.42552,332.41134Z;M395.5,320Q390,390,320,400Q250,410,172,408Q94,406,59,328Q24,250,70.5,183.5Q117,117,183.5,108Q250,99,335,89.5Q420,80,410.5,165Q401,250,395.5,320Z;M449.05134,329.9003Q409.80059,409.80059,329.9003,451.15995Q250,492.5193,162.89881,458.36084Q75.79762,424.20238,65.04837,337.10119Q54.29911,250,85.74629,183.59673Q117.19347,117.19347,183.59673,88.1905Q250,59.18753,328.8549,75.73886Q407.7098,92.2902,448.00594,171.1451Q488.30208,250,449.05134,329.9003Z;M409.06419,322.5266Q395.0532,395.0532,322.5266,445.11739Q250,495.18159,163.51944,459.07135Q77.03888,422.96112,82.39949,336.48056Q87.7601,250,115.64271,196.76266Q143.52532,143.52532,196.76266,76.83657Q250,10.14783,323.24578,56.82813Q396.49156,103.50844,409.78338,176.75422Q423.07519,250,409.06419,322.5266Z"
+            ></animate>
+          </path>
+        </svg>
+      </div>
+    </div>
+    <header>
+      <div class="avatar">
+        <img src="./img/avatar.jpeg" />
+      </div>
+      <p class="summary">
+        Highly motivated and efficient full stack developer with 2 years of
+        hands-on experience designing, developing and implementing projects and
+        solutions using a range of technologies.
+      </p>
+      <div class="personal-info">
+        <h1>Bohuslav Semenov</h1>
+        <p>Full stack developer</p>
+        <p>Malmö, Sweden</p>
+      </div>
+    </header>
     <main>
-        <menu>
-            <div class="menu-button" onclick="toggleMenu()">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="#ebebeb" width="24" height="24" viewBox="0 0 24 24"><path d="M6 12c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm9 0c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm9 0c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"/></svg>
-            </div>
-            <ul id="menu-list">
-                <li class="active" id="about-me-link" onclick="toggle('about-me')">About me</li>
-                <li id="contact-me-link" onclick="toggle('contact-me')">Contact me</li>
+      <div class="column">
+        <section>
+          <h1>Experience</h1>
+          <div class="item">
+            <h4>Full Stack Developer</h4>
+            <p>GetAccept AB / Jun 2022 - now</p>
+            <p>
+              Was a part of the integrations team. This job brought a lot of
+              experience working with designers, grooming, and planning sprints,
+              and being real team player.
+            </p>
+            <ul>
+              <li>Maintained a few projects with legacy and new code bases</li>
+              <li>
+                Worked tightly with designers going through design reviews and
+                implementing pixel-perfect designs.
+              </li>
+              <li>
+                Was responsible for and took part in the implementation of
+                valuable features for projects.
+              </li>
+              <li>Researched the migration of frontends from Vue2 to Vue3.</li>
+              <li>Took part in meetings with customers.</li>
             </ul>
-        </menu>
-        <div id="sections">
-            <section id="about-me-section">
-                <div class="flex-column">
-                <h1 class="purple">Bohuslav Semenov</h1>
-                <h6 class="second-font">Full stack developer</h6>
-                <h3 class="second-font">Hello, I am helping businesses and startups to build their own custom web products.</h3>
-                </div>
-                <button onclick="toggle('contact-me')">Contact me</button>
-            </section>
-            <section id="contact-me-section">
-                <h1 class="purple">Contacts</h1>
-                <div class="flex-row">
-                    <a href="https://t.me/bogusik">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#ebebeb" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path id="telegram-1" d="M18.384,22.779c0.322,0.228 0.737,0.285 1.107,0.145c0.37,-0.141 0.642,-0.457 0.724,-0.84c0.869,-4.084 2.977,-14.421 3.768,-18.136c0.06,-0.28 -0.04,-0.571 -0.26,-0.758c-0.22,-0.187 -0.525,-0.241 -0.797,-0.14c-4.193,1.552 -17.106,6.397 -22.384,8.35c-0.335,0.124 -0.553,0.446 -0.542,0.799c0.012,0.354 0.25,0.661 0.593,0.764c2.367,0.708 5.474,1.693 5.474,1.693c0,0 1.452,4.385 2.209,6.615c0.095,0.28 0.314,0.5 0.603,0.576c0.288,0.075 0.596,-0.004 0.811,-0.207c1.216,-1.148 3.096,-2.923 3.096,-2.923c0,0 3.572,2.619 5.598,4.062Zm-11.01,-8.677l1.679,5.538l0.373,-3.507c0,0 6.487,-5.851 10.185,-9.186c0.108,-0.098 0.123,-0.262 0.033,-0.377c-0.089,-0.115 -0.253,-0.142 -0.376,-0.064c-4.286,2.737 -11.894,7.596 -11.894,7.596Z"/></svg>
-                        <p>@bogusik</p>
-                    </a>
-                    <a href="mailto:bogusik@aol.com">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ebebeb" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
-                        <p>bogusik@aol.com</p>
-                    </a>
-                </div>
-            </section>
-        </div>
+          </div>
+          <div class="item">
+            <h4>Software Developer</h4>
+            <p>Infinit s.r.o / Aug 2021 - May 2022</p>
+            <p>
+              Worked on a big customer LocalBitcoins Oy as a software developer.
+            </p>
+            <ul>
+              <li>
+                Developed some features, such as anti-phishing codes, API
+                endpoints to support all levels of user verification, and some
+                admin panel functionality, etc.
+              </li>
+              <li>Took part in spring planning sessions.</li>
+              <li>Assisted with a transition to React.</li>
+            </ul>
+            <p>
+              In addition worked on an internal project, the pytest plugin
+              pytest-testmon which selects and executes only tests you need to
+              run. There I learned how to work with abstract syntax trees,
+              multiprocessing, and testing in different environments.
+            </p>
+          </div>
+          <div class="item">
+            <h4>Full Stack Developer</h4>
+            <p>PZAZ LTD / Apr 2021 - Jul 2021</p>
+            <p>
+              Helped with the development of an online radio broadcasting
+              feature. Worked on optimization of the interface for remote
+              controllers.
+            </p>
+            <ul>
+              <li>
+                Assisted in the development of an online radio broadcasting
+                feature.
+              </li>
+              <li>
+                Worked on optimization of the interface for remote controllers.
+              </li>
+              <li>Developed small features and fixed bugs.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h4>Full Stack Developer</h4>
+            <p>Mean Unicorns LTD / Dec 2020 - Jul 2021</p>
+            <p>Worked in a small team on various interesting projects.</p>
+            <ul>
+              <li>
+                ReadyCheck - online gaming tournaments platform. Developed
+                features, such as tournament system, wallet system, integration
+                of Stripe payments.
+              </li>
+              <li>Booking service for Boka.in</li>
+              <li>Internal search for BraveBison</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <div class="column">
+        <section>
+          <h1>Education</h1>
+          <div class="item">
+            <h4>System Analysis</h4>
+            <p>
+              NTUU "Igor Sikorsky Kyiv Polytechnic Institute" / Kyiv, Ukraine /
+              2018-2022
+            </p>
+          </div>
+        </section>
+        <section>
+          <h1>Skills</h1>
+          <div class="item">
+            <h4>Python</h4>
+            <ul class="tag-list">
+              <li class="tag">Django</li>
+              <li class="tag">DRF</li>
+              <li class="tag">dramatiq</li>
+              <li class="tag">Flask</li>
+              <li class="tag">celery</li>
+              <li class="tag">pytest</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h4>Javascript / Typescript</h4>
+            <ul class="tag-list">
+              <li class="tag">ES6+</li>
+              <li class="tag">Vue3</li>
+              <li class="tag">Nuxt.js</li>
+              <li class="tag">Axios</li>
+              <li class="tag">Moment/Luxon</li>
+              <li class="tag">Chrome extensions</li>
+              <li class="tag">Shadow DOM</li>
+              <li class="tag">Express.js</li>
+              <li class="tag">Nest.js</li>
+              <li class="tag">Webpack / Vite</li>
+              <li class="tag">Jest / Vitest</li>
+              <li class="tag">Node.js</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h4>Other</h4>
+            <ul class="tag-list">
+              <li class="tag">HTML</li>
+              <li class="tag">CSS</li>
+              <li class="tag">SCSS</li>
+              <li class="tag">Git</li>
+              <li class="tag">Linux</li>
+              <li class="tag">Figma</li>
+              <li class="tag">SQL</li>
+              <li class="tag">NoSQL</li>
+              <li class="tag">Github</li>
+              <li class="tag">Gitlab</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <h1>Languages</h1>
+          <div class="tag lang">
+            <h4>Ukrainian</h4>
+            <p>Native speaker</p>
+          </div>
+          <div class="tag lang">
+            <h4>Russian</h4>
+            <p>Native speaker</p>
+          </div>
+          <div class="tag lang">
+            <h4>English</h4>
+            <p>Advanced</p>
+          </div>
+        </section>
+        <section>
+          <h1>Contact</h1>
+          <div class="item">
+            <h4>LinkedIn</h4>
+            <p>
+              <a href="https://linkedin.com/in/bohuslav-semenov">
+                Bohuslav Semenov
+              </a>
+            </p>
+          </div>
+          <div class="item">
+            <h4>Email</h4>
+            <p>
+              <a href="mailto:bohuslav.semenov@gmail.com">
+                bohuslav.semenov@gmail.com
+              </a>
+            </p>
+          </div>
+          <div class="item">
+            <h4>Phone</h4>
+            <p>
+              <a href="tel:+46734957574">+46 73-495 75 74</a>
+            </p>
+          </div>
+        </section>
+      </div>
     </main>
-</body>
+    <script>
+      html2pdf(document.body).save();
+    </script>
+  </body>
 </html>
