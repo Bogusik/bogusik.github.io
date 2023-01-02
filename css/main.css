@@ -79,6 +79,7 @@ header {
   text-align: right;
   flex-shrink: 0;
   width: auto;
+  white-space: nowrap;
 }
 
 p,
@@ -194,5 +195,10 @@ a {
   main {
     width: 100%;
     padding: 0 1rem 2rem 1rem;
+  }
+
+  header {
+    width: 100%;
+    padding: 2rem 1rem;
   }
 }
