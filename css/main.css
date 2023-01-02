@@ -79,7 +79,6 @@ header {
   text-align: right;
   flex-shrink: 0;
   width: auto;
-  white-space: nowrap;
 }
 
 p,
