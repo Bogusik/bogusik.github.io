@@ -1,7 +1,7 @@
 @media screen and (prefers-color-scheme: light) {
   html {
     --font-color: #151317;
-    --secondary-color: #666a6d;
+    --secondary-color: #413b46;
     --background-color: #ffffff;
     --grain-opacity: 0.5;
   }
@@ -32,7 +32,7 @@ body {
   pointer-events: none;
 }
 
-.background .blob {
+.blob {
   z-index: 1;
   position: fixed;
   width: 40vw;
@@ -42,7 +42,7 @@ body {
   transform: translateY(-30vh);
 }
 
-.background .grain {
+.grain {
   z-index: -1;
   position: fixed;
   inset: 0 0 0 0;
@@ -66,6 +66,10 @@ h1 {
   font-size: 2rem;
 }
 
+b {
+  font-weight: 600;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -86,14 +90,14 @@ header {
 p,
 ul {
   margin: 0;
-  font-weight: 200;
+  font-weight: 300;
   color: var(--secondary-color);
 }
 
 .summary {
   border: 1px solid var(--secondary-color);
   padding: 1rem 2rem;
-  border-radius: 40px;
+  border-radius: 2rem;
   margin-right: 4rem;
 }
 
@@ -167,7 +171,7 @@ a {
   color: var(--secondary-color);
 }
 
-@media only screen and (max-width: 880px) {
+@media only screen and (max-width: 900px) {
   .column {
     width: 100%;
   }
@@ -191,6 +195,12 @@ a {
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .summary {
+    margin-right: 0;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   main {
     padding: 0 1rem 2rem 1rem;
@@ -199,5 +209,91 @@ a {
   header {
     width: 100%;
     padding: 2rem 1rem;
+  }
+}
+
+@media print {
+  html {
+    --font-color: #151317;
+    --secondary-color: #413b46;
+    --background-color: #ffffff;
+    --grain-opacity: 0.5;
+  }
+
+  @page {
+    margin-top: 0in;
+    margin-bottom: 0in;
+    margin-left: 0in;
+    margin-right: 0in;
+  }
+
+  body {
+    font-size: 12px;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  header {
+    gap: 1rem;
+    padding: 2rem 2rem 1rem 2rem;
+  }
+
+  h1 {
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+
+  section {
+    margin-bottom: 0;
+  }
+
+  .item {
+    margin: 0.5rem 0;
+  }
+
+  p,
+  ul {
+    font-weight: 400;
+  }
+
+  h4 {
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+
+  .blob,
+  .grain {
+    display: none;
+  }
+
+  .summary {
+    margin-right: 0;
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .item p,
+  .item ul {
+    margin-bottom: 0.25rem;
+  }
+
+  .item ul.tag-list {
+    margin-top: 0.5rem;
+  }
+
+  .tag {
+    border: 1px solid var(--secondary-color);
+    border-radius: 1rem;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .tag.lang {
+    margin-top: 0.5rem;
+  }
+
+  main {
+    padding: 0 2rem 2rem 2rem;
+    gap: 1rem;
   }
 }
