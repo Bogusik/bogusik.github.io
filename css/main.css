@@ -72,6 +72,8 @@ header {
   align-items: center;
   gap: 3rem;
   padding: 2rem 4rem;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .personal-info {
